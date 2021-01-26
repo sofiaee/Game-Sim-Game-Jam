@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2203071050263406651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,8 @@ GameObject:
   - component: {fileID: 2203071051132674325}
   - component: {fileID: 2203071051132674326}
   - component: {fileID: 2203071051132674321}
-  m_Layer: 0
+  - component: {fileID: 1277535190}
+  m_Layer: 9
   m_Name: Player_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 2203071051132674331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.42, y: -3.69, z: 0.4972918}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2203071050263406651}
   m_RootOrder: 0
@@ -193,3 +194,18 @@ MonoBehaviour:
   fallMultiplier: 4.5
   lowJumpMultiplier: 3.5
   grounded: 0
+--- !u!114 &1277535190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203071051132674331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7796b85a3fc9181409bb73444d155f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLight: 1
+  lightAnimationClips: []
+  darkAnimationClips: []
