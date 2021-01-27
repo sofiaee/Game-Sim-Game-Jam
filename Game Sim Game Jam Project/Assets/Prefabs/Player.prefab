@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2203071051132674326}
   - component: {fileID: 2203071051132674321}
   - component: {fileID: 1277535190}
+  - component: {fileID: 2444360176331750181}
   m_Layer: 9
   m_Name: Player_Character
   m_TagString: Untagged
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpVelocity: 9
+  gravityDirection: 0
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -206,6 +208,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7796b85a3fc9181409bb73444d155f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightAnimationClips:
+  - {fileID: 7400000, guid: 094d00c41ba46584589c9e2041511f13, type: 2}
+  - {fileID: 7400000, guid: 11adecd11cbedd94382c24beb7ddfcc0, type: 2}
+  - {fileID: 7400000, guid: 095d1c16f0f806c40b3b5163c103fc73, type: 2}
+  darkAnimationClips:
+  - {fileID: 7400000, guid: 570091028db4a1a4a8730566ebe1ee06, type: 2}
+  - {fileID: 7400000, guid: 25f1bd3c488ae084c8f919c298e9d08c, type: 2}
+  - {fileID: 7400000, guid: 56175d762bdc1d84eb56ba78de73524e, type: 2}
+--- !u!114 &2444360176331750181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203071051132674331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7187d95d56d744fbf2a5f4f7b65b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   isLight: 1
-  lightAnimationClips: []
-  darkAnimationClips: []

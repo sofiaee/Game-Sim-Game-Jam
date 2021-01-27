@@ -7,6 +7,7 @@ public class RigidBody_CharController : MonoBehaviour
     public float moveSpeed = 2f;
     [Range (1, 10)]
     public float jumpVelocity;
+    public float gravityDirection;
     public LayerMask platformLayerMask;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
@@ -34,52 +35,178 @@ public class RigidBody_CharController : MonoBehaviour
 
     private void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             jumpRequest = true;
         }
+        //Gravity Switch
+        GravitySwitch();
     }
+
 
     private void FixedUpdate()
     {
-       //movement
-        playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, playerRB.velocity.y);
+        CharAnimate();
+        CharMovement();
+        // Debug.Log(playerRB.velocity);
+        CharJumpRequest();
+        CharJumpGravity();
+    }
 
-       // Debug.Log(playerRB.velocity);
+    //movement
+    private void CharMovement()
+    {
+        if (gravityDirection == 0 || gravityDirection == 2)
+        {
+            playerRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, playerRB.velocity.y);
+        }
+        else
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, Input.GetAxisRaw("Vertical") * moveSpeed);
+        }
+    }
+
+    private void CharJumpRequest()
+    {
         if (jumpRequest)
         {
-            playerRB.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+
+            if (gravityDirection == 1) //Leftward
+            {
+                playerRB.AddForce(Vector2.right * jumpVelocity, ForceMode2D.Impulse);
+            }
+            else
+            {
+                if (gravityDirection == 2) //Upward
+                {
+                    playerRB.AddForce(Vector2.down * jumpVelocity, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    if (gravityDirection == 3) //Rightward
+                    {
+                        playerRB.AddForce(Vector2.left * jumpVelocity, ForceMode2D.Impulse);
+                    }
+                    else //Downward, original a.k.a. gravityDirection == 0
+                    {
+                        playerRB.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+                    }
+                }
+            }
             jumpRequest = false;
             grounded = false;
         }
         else
         {
+            CharGrounded();
+        }
+    }
+
+    private void CharGrounded()
+    {
+        if (gravityDirection == 0) //Downward, original
+        {
             Vector2 boxCenter = (Vector2)transform.position + Vector2.down * (playerSize.y + boxSize.y) * 0.5f;
-            grounded = Physics2D.OverlapBox (boxCenter, boxSize, 0f, platformLayerMask) != null;
+            grounded = Physics2D.OverlapBox(boxCenter, boxSize, 0f, platformLayerMask) != null;
         }
-
-        //added jump gravity
-        if (playerRB.velocity.y < 0)
+        if (gravityDirection == 1) //Leftward
         {
-            playerRB.gravityScale = fallMultiplier;
+            Vector2 boxCenter = (Vector2)transform.position + Vector2.left * (playerSize.x + boxSize.x) * 0.5f;
+            grounded = Physics2D.OverlapBox(boxCenter, boxSize, 0f, platformLayerMask) != null;
         }
-
-        else if (playerRB.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        if (gravityDirection == 2) //Upward
         {
-            playerRB.gravityScale = lowJumpMultiplier;
-        } 
+            Vector2 boxCenter = (Vector2)transform.position + Vector2.up * (playerSize.y + boxSize.y) * 0.5f;
+            grounded = Physics2D.OverlapBox(boxCenter, boxSize, 0f, platformLayerMask) != null;
+        }
+        if (gravityDirection == 3) //Rightward
+        {
+            Vector2 boxCenter = (Vector2)transform.position + Vector2.right * (playerSize.x + boxSize.x) * 0.5f;
+            grounded = Physics2D.OverlapBox(boxCenter, boxSize, 0f, platformLayerMask) != null;
+        }
+    }
 
+    //added jump gravity
+    private void CharJumpGravity()
+    {
+        if (gravityDirection == 0) //Downward fall
+        {
+            if (playerRB.velocity.y < 0)
+            {
+                playerRB.gravityScale = fallMultiplier;
+            }
+
+            else if (playerRB.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+            {
+                playerRB.gravityScale = lowJumpMultiplier;
+            }
+
+            else
+            {
+                playerRB.gravityScale = 1f;
+            }
+        }
         else
         {
-            playerRB.gravityScale = 1f;
+            if (gravityDirection == 1) //Leftward fall
+            {
+                if (playerRB.velocity.x < 0)
+                {
+                    playerRB.gravityScale = fallMultiplier;
+                }
+                else if (playerRB.velocity.x > 0 && !Input.GetKey(KeyCode.Space))
+                {
+                    playerRB.gravityScale = lowJumpMultiplier;
+                }
+                else
+                {
+                    playerRB.gravityScale = 1f;
+                }
+            }
+            else
+            {
+                if (gravityDirection == 2) //Upward fall
+                {
+                    if (playerRB.velocity.y > 0)
+                    {
+                        playerRB.gravityScale = fallMultiplier;
+                    }
+                    else if (playerRB.velocity.y < 0 && !Input.GetKey(KeyCode.Space))
+                    {
+                        playerRB.gravityScale = lowJumpMultiplier;
+                    }
+                    else
+                    {
+                        playerRB.gravityScale = 1f;
+                    }
+                }
+                else //Rightward fall
+                {
+                    if (playerRB.velocity.x > 0)
+                    {
+                        playerRB.gravityScale = fallMultiplier;
+                    }
+                    else if (playerRB.velocity.x < 0 && !Input.GetKey(KeyCode.Space))
+                    {
+                        playerRB.gravityScale = lowJumpMultiplier;
+                    }
+                    else
+                    {
+                        playerRB.gravityScale = 1f;
+                    }
+                }
+            }
         }
+    }
 
-        //Anim Stuff
-        if (Input.GetAxisRaw("Horizontal") < -.01f)
+    //Anim Stuff
+    private void CharAnimate()
+    {
+        if ((Input.GetAxisRaw("Horizontal") < -.01f && (gravityDirection == 0 || gravityDirection == 2)) || (Input.GetAxisRaw("Vertical") > .01f && (gravityDirection == 1 || gravityDirection == 3)))
         {
             mySpriteRenderer.flipX = true;
         }
-        if (Input.GetAxisRaw("Horizontal") > .01f)
+        if ((Input.GetAxisRaw("Horizontal") > .01f && (gravityDirection == 0 || gravityDirection == 2)) || (Input.GetAxisRaw("Vertical") < -.01f) && (gravityDirection == 1 || gravityDirection == 3))
         {
             mySpriteRenderer.flipX = false;
         }
@@ -92,7 +219,7 @@ public class RigidBody_CharController : MonoBehaviour
             }
             else
             {
-                if (Input.GetAxisRaw("Horizontal") > .01f  || Input.GetAxisRaw("Horizontal") < -.01f)
+                if (Input.GetAxisRaw("Horizontal") > .01f  || Input.GetAxisRaw("Horizontal") < -.01f || Input.GetAxisRaw("Vertical") > .01f || Input.GetAxisRaw("Vertical") < -.01f)
                 {
                     myAnim.SetBool("jumpNow", false);
                     myAnim.SetBool("isRunning", true);
@@ -106,4 +233,64 @@ public class RigidBody_CharController : MonoBehaviour
         }
     }
 
+    private void GravitySwitch()
+    {
+        if (Input.GetKey(KeyCode.Alpha1)) //Downward
+        {
+            gravityDirection = 0;
+            Physics2D.gravity = new Vector2(0, -9.81f);
+        }
+        if (Input.GetKey(KeyCode.Alpha2)) //Leftward
+        {
+            gravityDirection = 1;
+            Physics2D.gravity = new Vector2(-9.81f, 0);
+        }
+        if (Input.GetKey(KeyCode.Alpha3)) //Upward
+        {
+            gravityDirection = 2;
+            Physics2D.gravity = new Vector2(0, 9.81f);
+        }
+        if (Input.GetKey(KeyCode.Alpha4)) //Rightward
+        {
+            gravityDirection = 3;
+            Physics2D.gravity = new Vector2(9.81f, 0);
+        }
+        Rotation();//Animation matches gravitational orientation
+    }
+
+    private void Rotation()
+    {
+        if (gravityDirection == 1) //Leftward
+        {
+            transform.eulerAngles = new Vector3(0, 0, 270f);
+        }
+        else
+        {
+            if (gravityDirection == 2) //Upward
+            {
+                transform.eulerAngles = new Vector3(180f, 0, 0);
+            }
+            else
+            {
+                if (gravityDirection == 3) //Rightward
+                {
+                    transform.eulerAngles = new Vector3(180f, 0, 90f);
+                }
+                else //Downward
+                {
+                    transform.eulerAngles = Vector3.zero;
+                }
+            }
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D Collider)
+    {
+        Debug.Log("Trigger!");
+ /*       if (Collider.gravityFieldDirection() == 0)
+        {
+
+        }*/
+    }
 }
