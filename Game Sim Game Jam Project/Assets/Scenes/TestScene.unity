@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 507942109}
   - component: {fileID: 507942111}
   - component: {fileID: 507942110}
+  - component: {fileID: 507942112}
   m_Layer: 6
   m_Name: Roof
   m_TagString: Untagged
@@ -289,6 +290,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &507942112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507942108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f7e4f285b62d4581297750c30276c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAsset: 1
 --- !u!1001 &577515932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -373,6 +387,7 @@ GameObject:
   - component: {fileID: 661155344}
   - component: {fileID: 661155346}
   - component: {fileID: 661155345}
+  - component: {fileID: 661155347}
   m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
@@ -471,6 +486,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &661155347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661155343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f7e4f285b62d4581297750c30276c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAsset: 1
 --- !u!1001 &669848623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -940,6 +968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605137317}
   - component: {fileID: 1605137316}
+  - component: {fileID: 1605137318}
   m_Layer: 6
   m_Name: BG
   m_TagString: Untagged
@@ -988,7 +1017,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.14899999, g: 0.14899999, b: 0.14899999, a: 1}
+  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1012,6 +1041,19 @@ Transform:
   m_Father: {fileID: 876404228}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1605137318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605137315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0f7e4f285b62d4581297750c30276c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAsset: 0
 --- !u!1001 &1778636869
 PrefabInstance:
   m_ObjectHideFlags: 0
