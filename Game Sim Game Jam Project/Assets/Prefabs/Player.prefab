@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2203071050263406651}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2203071051132674321}
   - component: {fileID: 1277535190}
   - component: {fileID: 2444360176331750181}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Player_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &2203071051132674321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,9 @@ MonoBehaviour:
     m_Bits: 64
   fallMultiplier: 4.5
   lowJumpMultiplier: 3.5
+  deathFly: {x: 0, y: 15}
   grounded: 0
+  isAlive: 1
 --- !u!114 &1277535190
 MonoBehaviour:
   m_ObjectHideFlags: 0
