@@ -15,8 +15,8 @@ TagManager:
   - Platforms
   - 
   - 
-  - 
-  - 
+  - Background
+  - Player
   - 
   - 
   - Hazard
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 684863689
     locked: 0
