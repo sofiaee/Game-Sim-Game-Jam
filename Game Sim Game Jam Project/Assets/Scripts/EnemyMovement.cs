@@ -28,4 +28,5 @@ public class EnemyMovement : MonoBehaviour
         moveSpeed = -moveSpeed;
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
+    
 }
