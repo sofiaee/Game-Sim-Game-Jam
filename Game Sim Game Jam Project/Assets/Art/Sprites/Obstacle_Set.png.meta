@@ -4,40 +4,40 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8368128256764086575
-    second: Obstacle_Set_0
+    second: Button_Up_White
   - first:
       213: 7931794917669005573
-    second: Obstacle_Set_1
+    second: Button_Up_Black
   - first:
       213: -8047889697977481470
-    second: Obstacle_Set_2
+    second: Platform_Black
   - first:
       213: 9177589888964254106
-    second: Obstacle_Set_3
+    second: Button_Down_White
   - first:
       213: 5480519659213769156
-    second: Obstacle_Set_4
+    second: Button_Down_Black
   - first:
       213: -2499400893605172273
-    second: Obstacle_Set_5
+    second: Spike_White
   - first:
       213: 9127778020487239099
-    second: Obstacle_Set_6
+    second: Spike_Black
   - first:
       213: 7735558127647154077
-    second: Obstacle_Set_7
+    second: Platform_White
   - first:
       213: -1415331798980839915
-    second: Obstacle_Set_8
+    second: Gate_White
   - first:
       213: -8273362675548608075
-    second: Obstacle_Set_9
+    second: Gate_Black
   - first:
       213: 4496219455327196324
-    second: Obstacle_Set_10
+    second: Wall_Black
   - first:
       213: -4498521944507748452
-    second: Obstacle_Set_11
+    second: Wall_White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Obstacle_Set_0
+      name: Button_Up_White
       rect:
         serializedVersion: 2
         x: 33
@@ -135,7 +135,7 @@ TextureImporter:
         width: 197
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,7 +148,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_1
+      name: Button_Up_Black
       rect:
         serializedVersion: 2
         x: 265
@@ -156,7 +156,7 @@ TextureImporter:
         width: 197
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_2
+      name: Platform_Black
       rect:
         serializedVersion: 2
         x: 632
@@ -177,7 +177,7 @@ TextureImporter:
         width: 424
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_3
+      name: Button_Down_White
       rect:
         serializedVersion: 2
         x: 31
@@ -198,7 +198,7 @@ TextureImporter:
         width: 197
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_4
+      name: Button_Down_Black
       rect:
         serializedVersion: 2
         x: 264
@@ -219,7 +219,7 @@ TextureImporter:
         width: 197
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_5
+      name: Spike_White
       rect:
         serializedVersion: 2
         x: 32
@@ -240,7 +240,7 @@ TextureImporter:
         width: 197
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_6
+      name: Spike_Black
       rect:
         serializedVersion: 2
         x: 264
@@ -261,7 +261,7 @@ TextureImporter:
         width: 197
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,7 +274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_7
+      name: Platform_White
       rect:
         serializedVersion: 2
         x: 633
@@ -282,7 +282,7 @@ TextureImporter:
         width: 424
         height: 132
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,7 +295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_8
+      name: Gate_White
       rect:
         serializedVersion: 2
         x: 14
@@ -303,7 +303,7 @@ TextureImporter:
         width: 338
         height: 370
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -316,7 +316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_9
+      name: Gate_Black
       rect:
         serializedVersion: 2
         x: 381
@@ -324,7 +324,7 @@ TextureImporter:
         width: 336
         height: 368
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -337,7 +337,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_10
+      name: Wall_Black
       rect:
         serializedVersion: 2
         x: 763
@@ -345,7 +345,7 @@ TextureImporter:
         width: 133
         height: 425
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -358,7 +358,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Obstacle_Set_11
+      name: Wall_White
       rect:
         serializedVersion: 2
         x: 950
@@ -366,7 +366,7 @@ TextureImporter:
         width: 132
         height: 425
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

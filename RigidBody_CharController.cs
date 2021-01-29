@@ -11,19 +11,15 @@ public class RigidBody_CharController : MonoBehaviour
     public LayerMask platformLayerMask;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    [SerializeField] Vector2 deathFly = new Vector2(2f, 2f);
 
     private Rigidbody2D playerRB;
     private bool jumpRequest;
     public bool grounded;
     private float groundedDistance = 0.05f;
-    public bool isAlive = true;
 
     //Anim Stuff
     private SpriteRenderer mySpriteRenderer;
     private Animator myAnim;
-
-    CapsuleCollider2D myBodyCollider;
 
     Vector2 playerSize;
     Vector2 boxSize;
@@ -32,7 +28,6 @@ public class RigidBody_CharController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerSize = GetComponent<CapsuleCollider2D>().size;
-        myBodyCollider = GetComponent<CapsuleCollider2D>();
         boxSize = new Vector2(playerSize.x, groundedDistance);
         mySpriteRenderer = this.GetComponent<SpriteRenderer>();
         myAnim = this.GetComponent<Animator>();
@@ -51,14 +46,11 @@ public class RigidBody_CharController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!isAlive) { return; }
-
         CharAnimate();
         CharMovement();
         // Debug.Log(playerRB.velocity);
         CharJumpRequest();
         CharJumpGravity();
-        Die();
     }
 
     //movement
@@ -291,16 +283,6 @@ public class RigidBody_CharController : MonoBehaviour
             }
         }
         
-    }
-    
-    private void Die()
-    {
-        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
-        {
-            isAlive = false;
-            myAnim.SetTrigger("Die");
-            GetComponent<Rigidbody2D>().velocity = deathFly;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D Collider)
