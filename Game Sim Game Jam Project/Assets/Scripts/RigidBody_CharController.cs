@@ -36,6 +36,8 @@ public class RigidBody_CharController : MonoBehaviour
         boxSize = new Vector2(playerSize.x, groundedDistance);
         mySpriteRenderer = this.GetComponent<SpriteRenderer>();
         myAnim = this.GetComponent<Animator>();
+
+        GravitySwitch(0);
     }
 
     private void Update()
@@ -44,10 +46,7 @@ public class RigidBody_CharController : MonoBehaviour
         {
             jumpRequest = true;
         }
-        //Gravity Switch
-        GravitySwitch();
     }
-
 
     private void FixedUpdate()
     {
@@ -241,24 +240,24 @@ public class RigidBody_CharController : MonoBehaviour
         }
     }
 
-    private void GravitySwitch()
+    public void GravitySwitch(float fieldGrav)
     {
-        if (Input.GetKey(KeyCode.Alpha1)) //Downward
+        if (fieldGrav == 0) //Downward
         {
             gravityDirection = 0;
             Physics2D.gravity = new Vector2(0, -9.81f);
         }
-        if (Input.GetKey(KeyCode.Alpha2)) //Leftward
+        if (fieldGrav == 1) //Leftward
         {
             gravityDirection = 1;
             Physics2D.gravity = new Vector2(-9.81f, 0);
         }
-        if (Input.GetKey(KeyCode.Alpha3)) //Upward
+        if (fieldGrav == 2) //Upward
         {
             gravityDirection = 2;
             Physics2D.gravity = new Vector2(0, 9.81f);
         }
-        if (Input.GetKey(KeyCode.Alpha4)) //Rightward
+        if (fieldGrav == 3) //Rightward
         {
             gravityDirection = 3;
             Physics2D.gravity = new Vector2(9.81f, 0);
@@ -301,14 +300,5 @@ public class RigidBody_CharController : MonoBehaviour
             myAnim.SetTrigger("Die");
             GetComponent<Rigidbody2D>().velocity = deathFly;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D Collider)
-    {
-        Debug.Log("Trigger!");
- /*       if (Collider.gravityFieldDirection() == 0)
-        {
-
-        }*/
     }
 }
