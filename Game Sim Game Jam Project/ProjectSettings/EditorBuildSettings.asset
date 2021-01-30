@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LobbyTest.unity
+    guid: f46edd0a8185346479f940fdfad6e3ab
+  - enabled: 1
+    path: Assets/Scenes/Test_Gravity.unity
+    guid: 0af51e0f0d93ca64e9f436862a82192a
   m_configObjects: {}
