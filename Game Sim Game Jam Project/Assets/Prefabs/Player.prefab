@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 2444360176331750181}
   m_Layer: 10
   m_Name: Player_Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,13 +187,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e574414f13474e44aa98487e0940853f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   jumpVelocity: 9
   gravityDirection: 0
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  fallMultiplier: 4.5
+  fallMultiplier: 2.5
   lowJumpMultiplier: 3.5
   deathFly: {x: 0, y: 15}
   grounded: 0
