@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelectscript : MonoBehaviour
 {
     
-     void OnCollisionEnter(Collision gameObjectInformation)
+     void OnTriggerEnter(Collider gameObjectInformation)
     {
         SceneManager.LoadScene("Test_Gravity");
     }
