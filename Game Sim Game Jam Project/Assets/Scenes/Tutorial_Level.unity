@@ -35730,11 +35730,11 @@ PrefabInstance:
       objectReference: {fileID: 1605137318}
     - target: {fileID: 3274396195313182494, guid: 8a65d82aa2f51dd4f9ccd46a4f8041c5, type: 3}
       propertyPath: orthographic size
-      value: 4.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 3274396195313182495, guid: 8a65d82aa2f51dd4f9ccd46a4f8041c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.36
+      value: -30.928299
       objectReference: {fileID: 0}
     - target: {fileID: 3274396195313182495, guid: 8a65d82aa2f51dd4f9ccd46a4f8041c5, type: 3}
       propertyPath: m_LocalPosition.y
