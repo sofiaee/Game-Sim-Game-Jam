@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd6fab3899208248bac145b818a7ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightAsset: 1
+  lightAsset: 0
