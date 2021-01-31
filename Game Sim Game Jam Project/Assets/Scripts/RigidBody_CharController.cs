@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class RigidBody_CharController : MonoBehaviour
@@ -299,6 +300,13 @@ public class RigidBody_CharController : MonoBehaviour
             isAlive = false;
             myAnim.SetTrigger("Die");
             GetComponent<Rigidbody2D>().velocity = deathFly;
+            StartCoroutine("RestartLevel");
         }
+    }
+
+    public IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
