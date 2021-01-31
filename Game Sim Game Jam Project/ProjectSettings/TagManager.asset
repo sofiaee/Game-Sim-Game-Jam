@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dark Player
+  - FieldGravity
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Platforms
-  - 
+  - Gate
   - 
   - Background
   - Player
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 684863689
+    locked: 0
+  - name: UI
+    uniqueID: 3115368669
     locked: 0

@@ -308,5 +308,6 @@ public class RigidBody_CharController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 }

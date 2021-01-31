@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 223219821821425065}
   - component: {fileID: 1922887777735000961}
   - component: {fileID: 224151743766006134}
-  m_Layer: 0
+  - component: {fileID: 8020686739733137727}
+  m_Layer: 7
   m_Name: Gate_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2100339, y: -0.17875206}
+  m_Offset: {x: -0.2100339, y: -0.56406856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7422934, y: 3.3224957}
+  m_Size: {x: 1.529273, y: 2.5518627}
   m_EdgeRadius: 0
 --- !u!114 &224151743766006134
 MonoBehaviour:
@@ -122,4 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd6fab3899208248bac145b818a7ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightAsset: 1
+  lightAsset: 0
+--- !u!114 &8020686739733137727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081857904233179445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8323e0a93b28c0544aa9ad54bce0bf89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winScreen: {fileID: 0}
