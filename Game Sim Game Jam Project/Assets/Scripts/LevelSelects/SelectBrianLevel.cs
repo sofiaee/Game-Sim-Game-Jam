@@ -8,6 +8,6 @@ public class SelectBrianLevel : MonoBehaviour
 
     void OnTriggerEnter(Collider gameObjectInformation)
     {
-        SceneManager.LoadScene("FaganBrian_Level_001");
+        SceneManager.LoadScene("Level_002_Gray_Area_Gravity");
     }
 }
