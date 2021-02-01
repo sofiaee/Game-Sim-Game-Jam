@@ -7,11 +7,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject escScreen;
+    public GameObject instructionsScreen;
 
     private void Awake()
     {
         Time.timeScale = 1;
         escScreen.SetActive(false);
+        instructionsScreen.SetActive(false);
     }
 
     public void RestartLevel()
@@ -45,6 +47,18 @@ public class GameManager : MonoBehaviour
     {
         escScreen.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void Instructions()
+    {
+        instructionsScreen.SetActive(true);
+        escScreen.SetActive(false);
+    }
+
+    public void EndInstructions()
+    {
+        instructionsScreen.SetActive(false);
+        escScreen.SetActive(true);
     }
 
     private void Update()
