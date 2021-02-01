@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("LobbySceneFinal");
         Time.timeScale = 1;
     }
     public void Credits()
